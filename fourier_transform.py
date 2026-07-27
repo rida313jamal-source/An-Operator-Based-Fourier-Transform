@@ -469,7 +469,7 @@ def render_fourier_section():
     st.markdown(r"""
     $s = \sigma + i\omega,\qquad \bar{s} = \sigma - i\omega$
     """)
-        if __name__ == "__main__":
+             if __name__ == "__main__":
     render_fourier_section()
 
 
