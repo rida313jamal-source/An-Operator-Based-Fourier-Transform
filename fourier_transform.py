@@ -451,24 +451,29 @@ def render_fourier_section():
     # ============================================================
     # TABLE: Summary of Fourier Results
     # ============================================================
-    st.header("Table 2: Summary of Operator Fourier Transform Results")
+    import streamlit as st
 
-    st.markdown("""
-    | Function $f(t)$ | Regulated form $\\mathcal{F}_\\sigma\\{f\\}(\\omega)$ | Classical limit $\\lim_{\\sigma\\to0^+}$ |
-    |---|---|---|
-    | $1$ | $\\frac{2\\sigma}{\\sigma^2+\\omega^2}$ | $2\\pi\\delta(\\omega)$ |
-    | $e^{-a|t|}$ | $\\frac{2(a+\\sigma)}{(a+\\sigma)^2+\\omega^2}$ | $\\frac{2a}{a^2+\\omega^2}$ |
-    | $\\cos t$ | $\\frac{\\sigma}{\\sigma^2+(\\omega-1)^2}+\\frac{\\sigma}{\\sigma^2+(\\omega+1)^2}$ | $\\pi[\\delta(\\omega-1)+\\delta(\\omega+1)]$ |
-    | $\\sin t$ | $\\frac{\\sigma}{i}\\left[\\frac{1}{\\sigma^2+(\\omega-1)^2}-\\frac{1}{\\sigma^2+(\\omega+1)^2}\\right]$ | $\\frac{\\pi}{i}[\\delta(\\omega-1)-\\delta(\\omega+1)]$ |
-    | $e^{-a t^2}$ | $\\frac{\\sqrt{\\pi}}{2\\sqrt a}\\left[e^{s^2/(4a)}\\operatorname{erfc}\\left(\\frac{s}{2\\sqrt a}\\right)+e^{\\bar s^2/(4a)}\\operatorname{erfc}\\left(\\frac{\\bar s}{2\\sqrt a}\\right)\\right]$ | $\\sqrt{\\frac{\\pi}{a}}e^{-\\omega^2/(4a)}$ |
-    | $\\mathrm{sinc}(t)$ | $\\arctan\\left(\\frac{1}{\\sigma+i\\omega}\\right)+\\arctan\\left(\\frac{1}{\\sigma-i\\omega}\\right)$ | $\\pi\\mathbf{1}_{(|\\omega|<1)}$ |
-    | $\\delta(t)$ | $1$ | $1$ |
-    | $\\chi_{[-R,R]}(t)$ | $\\frac{1-e^{-sR}}{s}+\\frac{1-e^{-\\bar s R}}{\\bar s}$ | $\\frac{2\\sin(\\omega R)}{\\omega}$ |
-    """)
+st.header("Table 2: Summary of Operator Fourier Transform Results")
 
-    st.markdown(r"""
-    $s = \sigma + i\omega,\qquad \bar{s} = \sigma - i\omega$
-    """)
+# Fixed by using a Raw String (r""") and replacing internal markdown pipe characters '|' with '\vert'
+st.markdown(r"""
+
+| Function $f(t)$ | Regulated form $\mathcal{F}_\sigma\{f\}(\omega)$ | Classical limit $\lim_{\sigma\to0^+}$ |
+|---|---|---|
+| $1$ | $\frac{2\sigma}{\sigma^2+\omega^2}$ | $2\pi\delta(\omega)$ |
+| $e^{-a\vert t\vert}$ | $\frac{2(a+\sigma)}{(a+\sigma)^2+\omega^2}$ | $\frac{2a}{a^2+\omega^2}$ |
+| $\cos t$ | $\frac{\sigma}{\sigma^2+(\omega-1)^2}+\frac{\sigma}{\sigma^2+(\omega+1)^2}$ | $\pi[\delta(\omega-1)+\delta(\omega+1)]$ |
+| $\sin t$ | $\frac{\sigma}{i}\left[\frac{1}{\sigma^2+(\omega-1)^2}-\frac{1}{\sigma^2+(\omega+1)^2}\right]$ | $\frac{\pi}{i}[\delta(\omega-1)-\delta(\omega+1)]$ |
+| $e^{-a t^2}$ | $\frac{\sqrt{\pi}}{2\sqrt a}\left[e^{s^2/(4a)}\operatorname{erfc}\left(\frac{s}{2\sqrt a}\right)+e^{\bar s^2/(4a)}\operatorname{erfc}\left(\frac{\bar s}{2\sqrt a}\right)\right]$ | $\sqrt{\frac{\pi}{a}}e^{-\omega^2/(4a)}$ |
+| $\mathrm{sinc}(t)$ | $\arctan\left(\frac{1}{\sigma+i\omega}\right)+\arctan\left(\frac{1}{\sigma-i\omega}\right)$ | $\pi\mathbf{1}_{(\vert\omega\vert<1)}$ |
+| $\delta(t)$ | $1$ | $1$ |
+| $\chi_{[-R,R]}(t)$ | $\frac{1-e^{-sR}}{s}+\frac{1-e^{-\bar s R}}{\bar s}$ | $\frac{2\sin(\omega R)}{\omega}$ |
+""")
+
+st.markdown(r"""
+$s = \sigma + i\omega,\qquad \bar{s} = \sigma - i\omega$
+""")
+
 
 if __name__ == "__main__":
     render_fourier_section()
