@@ -465,7 +465,7 @@ st.markdown(r"""
 | $e^{-a t^2}$ | $\frac{\sqrt{\pi}}{2\sqrt a}\left[e^{s^2/(4a)}\operatorname{erfc}\left(\frac{s}{2\sqrt a}\right)+e^{\bar s^2/(4a)}\operatorname{erfc}\left(\frac{\bar s}{2\sqrt a}\right)\right]$ | $\sqrt{\frac{\pi}{a}}e^{-\omega^2/(4a)}$ |
 | $\mathrm{sinc}(t)$ | $\arctan\left(\frac{1}{\sigma+i\omega}\right)+\arctan\left(\frac{1}{\sigma-i\omega}\right)$ | $\pi\mathbf{1}_{(\vert\omega\vert<1)}$ |
 | $\delta(t)$ |  | $1$ |
-| $\chi_{[-R,R]}(t)$ | $\frac{1-e^{-sR}}{s}+\\frac{1-e^{-\bar s R}}{\bar s}$ | $\frac{2\sin(\omega R)}{\omega}$ |
+| $\chi_{[-R,R]}(t)$ | $\frac{1-e^{-sR}}{s}+\frac{1-e^{-\bar s R}}{\bar s}$ | $\frac{2\sin(\omega R)}{\omega}$ |
 """)
 
 st.markdown(r"""
