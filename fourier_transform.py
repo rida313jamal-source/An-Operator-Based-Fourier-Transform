@@ -451,7 +451,7 @@ def render_fourier_section():
     # ============================================================
     # TABLE: Summary of Fourier Results
     # ============================================================
-    import streamlit as st
+    
 
 st.header("Table 2: Summary of Operator Fourier Transform Results")
 
