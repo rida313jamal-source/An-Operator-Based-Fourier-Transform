@@ -3,7 +3,7 @@ import sympy as sp
 import numpy as np
 import math
 
-def render_fourier_section()
+def render_fourier_section():
     # ============================================================
     # HEADER & INTRODUCTION
     # ============================================================
