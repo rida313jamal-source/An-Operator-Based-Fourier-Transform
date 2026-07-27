@@ -453,9 +453,11 @@ def render_fourier_section():
     # ============================================================
     
 
+# --- Place this block at the very end of your script/function ---
+
 st.header("Table 2: Summary of Operator Fourier Transform Results")
 
-# Fixed by using a Raw String (r""") and replacing internal markdown pipe characters '|' with '\vert'
+# Render the fixed table layout
 st.markdown(r"""
 
 | Function $f(t)$ | Regulated form $\mathcal{F}_\sigma\{f\}(\omega)$ | Classical limit $\lim_{\sigma\to0^+}$ |
@@ -467,12 +469,13 @@ st.markdown(r"""
 | $e^{-a t^2}$ | $\frac{\sqrt{\pi}}{2\sqrt a}\left[e^{s^2/(4a)}\operatorname{erfc}\left(\frac{s}{2\sqrt a}\right)+e^{\bar s^2/(4a)}\operatorname{erfc}\left(\frac{\bar s}{2\sqrt a}\right)\right]$ | $\sqrt{\frac{\pi}{a}}e^{-\omega^2/(4a)}$ |
 | $\mathrm{sinc}(t)$ | $\arctan\left(\frac{1}{\sigma+i\omega}\right)+\arctan\left(\frac{1}{\sigma-i\omega}\right)$ | $\pi\mathbf{1}_{(\vert\omega\vert<1)}$ |
 | $\delta(t)$ | $1$ | $1$ |
-| $\chi_{[-R,R]}(t)$ | $\frac{1-e^{-sR}}{s}+\frac{1-e^{-\bar s R}}{\bar s}$ | $\frac{2\sin(\omega R)}{\omega}$ |
+| $\chi_{[-R,R]}(t)$ | $\frac{1-e^{-sR}}{s}+\\frac{1-e^{-\bar s R}}{\bar s}$ | $\frac{2\sin(\omega R)}{\omega}$ |
 """)
 
 st.markdown(r"""
 $s = \sigma + i\omega,\qquad \bar{s} = \sigma - i\omega$
 """)
+
 
 
 if __name__ == "__main__":
