@@ -453,7 +453,6 @@ def render_fourier_section():
     # ============================================================
     
 
-import streamlit as st
 
 # 1. Create a container at the very end of your main layout setup
 # (Put this line after your sidebar or main header configurations)
