@@ -450,6 +450,7 @@ def render_fourier_section():
     st.divider()
 
     # --- Place this block at the very end of your script/function ---
+
 st.header("Table 2: Summary of Operator Fourier Transform Results")
 
 # Render the fixed table layout
